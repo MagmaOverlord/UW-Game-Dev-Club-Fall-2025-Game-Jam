@@ -1,4 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://d045yed3ej1rv"]
+[gd_scene load_steps=8 format=3 uid="uid://d045yed3ej1rv"]
+
+[ext_resource type="Script" uid="uid://cgy4k0khb0vi6" path="res://Scripts/enemy_follow_script.gd" id="1_elm2u"]
+[ext_resource type="Script" uid="uid://l0hjsrrdvbpc" path="res://Levels/GameManager.gd" id="1_k6mlf"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_v62h7"]
 
@@ -8,8 +11,19 @@
 albedo_color = Color(0.26293245, 0.26293245, 0.26293245, 1)
 
 [sub_resource type="Curve3D" id="Curve3D_feb8i"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 17.115, 0, 0, 0, 0, 0, 0, 14.72, 0, 17.505, 0.925, 0, 0, 0, 0, 0, 14.765, 0, 37.155, 0, 0, 0, 0, 0, 0, -26.34, 0, 37.345),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0)
+}
+point_count = 5
 
-[node name="Node3D" type="Node3D"]
+[sub_resource type="BoxMesh" id="BoxMesh_elm2u"]
+
+[node name="GameManager" type="Node3D"]
+script = ExtResource("1_k6mlf")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.42701066, 0.90424657, 0, -0.90424657, 0.42701066, 0, 38.35586, 27.996025)
 
 [node name="Floor" type="CSGMesh3D" parent="."]
 transform = Transform3D(50, 0, 0, 0, 0.1, 0, 0, 0, 50, 0, 0, 0)
@@ -38,5 +52,19 @@ mesh = SubResource("BoxMesh_qrja6")
 material = SubResource("StandardMaterial3D_co24e")
 
 [node name="Path3D" type="Path3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.7049084, 1.9263887, -25.767973)
 curve = SubResource("Curve3D_feb8i")
 debug_custom_color = Color(1, 0, 0, 1)
+
+[node name="Temp Enemy" type="PathFollow3D" parent="Path3D"]
+transform = Transform3D(-0.99999166, 0, -8.7422045e-08, 0, 1, 0, 8.7422045e-08, 0, -0.99999166, 0, 0, 0)
+cubic_interp = false
+loop = false
+tilt_enabled = false
+script = ExtResource("1_elm2u")
+
+[node name="Temp Enemy Mesh" type="MeshInstance3D" parent="Path3D/Temp Enemy"]
+mesh = SubResource("BoxMesh_elm2u")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.48328245, 0.8754645, 0, -0.8754645, 0.48328245, 0, 27.832994, 20.318691)
