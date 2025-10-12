@@ -14,3 +14,7 @@ config/name="UW Game Dev Club Fall Jam 2025"
 run/main_scene="uid://d045yed3ej1rv"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
+
+[global_group]
+
+GameManager="Used to access the game manager for all objects"
