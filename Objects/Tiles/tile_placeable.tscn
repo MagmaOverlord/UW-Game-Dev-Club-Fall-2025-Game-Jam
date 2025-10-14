@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://dg5xnwwehfdof"]
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_cgo6g"]
+data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
+
+[sub_resource type="BoxMesh" id="BoxMesh_qojqx"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5ocxy"]
+albedo_color = Color(0.24441558, 0.31612754, 0.16469544, 1)
+
+[node name="Tile Template" type="StaticBody3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("ConcavePolygonShape3D_cgo6g")
+
+[node name="Tile Mesh" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_qojqx")
+surface_material_override/0 = SubResource("StandardMaterial3D_5ocxy")

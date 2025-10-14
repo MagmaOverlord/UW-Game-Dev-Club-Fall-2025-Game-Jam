@@ -1,0 +1,91 @@
+[gd_scene load_steps=5 format=3 uid="uid://byk2gov8exdbc"]
+
+[ext_resource type="PackedScene" uid="uid://bdgdno75gln4m" path="res://Objects/Tiles/tile_path.tscn" id="1_2sp8g"]
+[ext_resource type="Script" uid="uid://g212y8a0y1mr" path="res://Levels/world.gd" id="1_kwisk"]
+[ext_resource type="PackedScene" uid="uid://dg5xnwwehfdof" path="res://Objects/Tiles/tile_placeable.tscn" id="2_kwisk"]
+
+[sub_resource type="Curve3D" id="Curve3D_2sp8g"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -0.052308425, -0.00033807755, 0.4251981, 0, 0, 0, 0, 0, 0, -0.0070179207, 0.0024052514, -3.0198526, 0, 0, 0, 0, 0, 0, -2.304416, 0.08701668, -2.999724),
+"tilts": PackedFloat32Array(0, 0, 0)
+}
+point_count = 3
+up_vector_enabled = false
+
+[node name="World" type="Node3D"]
+script = ExtResource("1_kwisk")
+
+[node name="Map" type="Node3D" parent="."]
+
+[node name="Tile Template2" parent="Map" instance=ExtResource("2_kwisk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
+
+[node name="Tile Template3" parent="Map" instance=ExtResource("1_2sp8g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1)
+
+[node name="Tile Template4" parent="Map" instance=ExtResource("1_2sp8g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2)
+
+[node name="Tile Template5" parent="Map" instance=ExtResource("1_2sp8g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3)
+
+[node name="Tile Template6" parent="Map" instance=ExtResource("1_2sp8g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -3)
+
+[node name="Tile Template7" parent="Map" instance=ExtResource("1_2sp8g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -3)
+
+[node name="Tile Template8" parent="Map" instance=ExtResource("2_kwisk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -2)
+
+[node name="Tile Template9" parent="Map" instance=ExtResource("2_kwisk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -2)
+
+[node name="Tile Template10" parent="Map" instance=ExtResource("2_kwisk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -1)
+
+[node name="Tile Template11" parent="Map" instance=ExtResource("2_kwisk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -1)
+
+[node name="Tile Template12" parent="Map" instance=ExtResource("2_kwisk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 0)
+
+[node name="Tile Template13" parent="Map" instance=ExtResource("2_kwisk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0)
+
+[node name="Tile Template14" parent="Map" instance=ExtResource("2_kwisk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -1)
+
+[node name="Tile Template15" parent="Map" instance=ExtResource("2_kwisk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -2)
+
+[node name="Tile Template16" parent="Map" instance=ExtResource("2_kwisk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -4)
+
+[node name="Tile Template17" parent="Map" instance=ExtResource("2_kwisk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -4)
+
+[node name="Tile Template18" parent="Map" instance=ExtResource("2_kwisk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4)
+
+[node name="Tile Template19" parent="Map" instance=ExtResource("2_kwisk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -4)
+
+[node name="Tile Template20" parent="Map" instance=ExtResource("2_kwisk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -3)
+
+[node name="Tile Template" parent="Map" instance=ExtResource("1_2sp8g")]
+
+[node name="Path3D" type="Path3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.037474096, 0.52553964, 0)
+curve = SubResource("Curve3D_2sp8g")
+
+[node name="SpawnTimer" type="Timer" parent="."]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.65893894, 0.75219643, 0, -0.75219643, 0.65893894, 0, 3.7255836, 2.1069877)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.6251473, 0.7805068, 0, -0.7805068, 0.6251473, 0.06255412, 5.6675096, 0.8864906)
+
+[connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]

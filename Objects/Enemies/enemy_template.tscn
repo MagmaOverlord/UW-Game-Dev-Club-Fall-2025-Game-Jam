@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://81arhxnv3ggn"]
+
+[ext_resource type="Script" uid="uid://cgy4k0khb0vi6" path="res://Scripts/enemy_follow.gd" id="1_4htb5"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_4htb5"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4htb5"]
+
+[node name="Enemy Path Follow" type="PathFollow3D"]
+
+[node name="Enemy Body" type="CharacterBody3D" parent="."]
+script = ExtResource("1_4htb5")
+
+[node name="Enemy Mesh" type="MeshInstance3D" parent="Enemy Body"]
+mesh = SubResource("BoxMesh_4htb5")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Enemy Body"]
+shape = SubResource("BoxShape3D_4htb5")
