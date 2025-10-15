@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://l0hjsrrdvbpc" path="res://Scripts/game_manager.gd" id="1_k6mlf"]
 [ext_resource type="PackedScene" uid="uid://81arhxnv3ggn" path="res://Objects/Enemies/enemy_template.tscn" id="2_k6mlf"]
-[ext_resource type="PackedScene" uid="uid://c6pxy1rnb8w7n" path="res://Objects/tower_template.tscn" id="3_6fp6m"]
+[ext_resource type="PackedScene" uid="uid://c6pxy1rnb8w7n" path="res://Objects/Towers/tower_template.tscn" id="3_6fp6m"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_v62h7"]
 

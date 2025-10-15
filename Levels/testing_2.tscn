@@ -1,19 +1,23 @@
-[gd_scene load_steps=5 format=3 uid="uid://byk2gov8exdbc"]
+[gd_scene load_steps=6 format=3 uid="uid://byk2gov8exdbc"]
 
 [ext_resource type="PackedScene" uid="uid://bdgdno75gln4m" path="res://Objects/Tiles/tile_path.tscn" id="1_2sp8g"]
 [ext_resource type="Script" uid="uid://g212y8a0y1mr" path="res://Levels/world.gd" id="1_kwisk"]
 [ext_resource type="PackedScene" uid="uid://dg5xnwwehfdof" path="res://Objects/Tiles/tile_placeable.tscn" id="2_kwisk"]
+[ext_resource type="PackedScene" uid="uid://c6pxy1rnb8w7n" path="res://Objects/Towers/tower_template.tscn" id="4_jk67j"]
 
 [sub_resource type="Curve3D" id="Curve3D_2sp8g"]
 _data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -0.052308425, -0.00033807755, 0.4251981, 0, 0, 0, 0, 0, 0, -0.0070179207, 0.0024052514, -3.0198526, 0, 0, 0, 0, 0, 0, -2.304416, 0.08701668, -2.999724),
-"tilts": PackedFloat32Array(0, 0, 0)
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -0.052308425, -0.00033807755, 0.4251981, 0, 0, 0, 0, 0, 0, -0.0070179207, 0.0024052514, -3.0198526, 0, 0, 0, 0, 0, 0, -4.864315, 0.18129584, -2.9772954, 0, 0, 0, 0, 0, 0, -4.968487, 0.22826838, -7.9112387, 0, 0, 0, 0, 0, 0, -1.8957386, 0.22844386, -7.8973455, 0, 0, 0, 0, 0, 0, -1.960988, 0.21933246, -6.9412456, 0, 0, 0, 0, 0, 0, 0.9634115, 0.21845603, -6.8185153, 0, 0, 0, 0, 0, 0, 0.8551266, 0.247154, -9.833259),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0)
 }
-point_count = 3
+point_count = 8
 up_vector_enabled = false
 
 [node name="World" type="Node3D"]
 script = ExtResource("1_kwisk")
+
+[node name="Tower Template" parent="." instance=ExtResource("4_jk67j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0058357, 0.5, -1.9757313)
 
 [node name="Map" type="Node3D" parent="."]
 
@@ -76,6 +80,162 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -3)
 
 [node name="Tile Template" parent="Map" instance=ExtResource("1_2sp8g")]
 
+[node name="Tile Template21" parent="Map" instance=ExtResource("1_2sp8g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, -3)
+
+[node name="Tile Template22" parent="Map" instance=ExtResource("1_2sp8g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, -3)
+
+[node name="Tile Template23" parent="Map" instance=ExtResource("1_2sp8g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, -3)
+
+[node name="Tile Template24" parent="Map" instance=ExtResource("1_2sp8g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, -4)
+
+[node name="Tile Template25" parent="Map" instance=ExtResource("1_2sp8g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, -5)
+
+[node name="Tile Template26" parent="Map" instance=ExtResource("1_2sp8g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, -6)
+
+[node name="Tile Template27" parent="Map" instance=ExtResource("1_2sp8g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, -7)
+
+[node name="Tile Template28" parent="Map" instance=ExtResource("1_2sp8g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, -8)
+
+[node name="Tile Template29" parent="Map" instance=ExtResource("1_2sp8g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, -8)
+
+[node name="Tile Template30" parent="Map" instance=ExtResource("1_2sp8g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, -8)
+
+[node name="Tile Template31" parent="Map" instance=ExtResource("1_2sp8g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -8)
+
+[node name="Tile Template32" parent="Map" instance=ExtResource("1_2sp8g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -7)
+
+[node name="Tile Template33" parent="Map" instance=ExtResource("1_2sp8g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -7)
+
+[node name="Tile Template34" parent="Map" instance=ExtResource("1_2sp8g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -7)
+
+[node name="Tile Template35" parent="Map" instance=ExtResource("1_2sp8g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -7)
+
+[node name="Tile Template36" parent="Map" instance=ExtResource("1_2sp8g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -8)
+
+[node name="Tile Template37" parent="Map" instance=ExtResource("1_2sp8g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -9)
+
+[node name="Tile Template38" parent="Map" instance=ExtResource("1_2sp8g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -10)
+
+[node name="Tile Template39" parent="Map" instance=ExtResource("2_kwisk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, 0)
+
+[node name="Tile Template40" parent="Map" instance=ExtResource("2_kwisk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, -1)
+
+[node name="Tile Template41" parent="Map" instance=ExtResource("2_kwisk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, -2)
+
+[node name="Tile Template42" parent="Map" instance=ExtResource("2_kwisk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 0)
+
+[node name="Tile Template43" parent="Map" instance=ExtResource("2_kwisk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 0)
+
+[node name="Tile Template44" parent="Map" instance=ExtResource("2_kwisk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, 0)
+
+[node name="Tile Template45" parent="Map" instance=ExtResource("2_kwisk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, -1)
+
+[node name="Tile Template46" parent="Map" instance=ExtResource("2_kwisk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, -1)
+
+[node name="Tile Template47" parent="Map" instance=ExtResource("2_kwisk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, -1)
+
+[node name="Tile Template48" parent="Map" instance=ExtResource("2_kwisk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, -2)
+
+[node name="Tile Template49" parent="Map" instance=ExtResource("2_kwisk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, -2)
+
+[node name="Tile Template50" parent="Map" instance=ExtResource("2_kwisk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, -2)
+
+[node name="Tile Template51" parent="Map" instance=ExtResource("2_kwisk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, -3)
+
+[node name="Tile Template52" parent="Map" instance=ExtResource("2_kwisk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, -4)
+
+[node name="Tile Template53" parent="Map" instance=ExtResource("2_kwisk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, -5)
+
+[node name="Tile Template54" parent="Map" instance=ExtResource("2_kwisk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, -6)
+
+[node name="Tile Template55" parent="Map" instance=ExtResource("2_kwisk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, -7)
+
+[node name="Tile Template56" parent="Map" instance=ExtResource("2_kwisk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, -8)
+
+[node name="Tile Template57" parent="Map" instance=ExtResource("2_kwisk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, -4)
+
+[node name="Tile Template58" parent="Map" instance=ExtResource("2_kwisk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, -4)
+
+[node name="Tile Template59" parent="Map" instance=ExtResource("2_kwisk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, -5)
+
+[node name="Tile Template60" parent="Map" instance=ExtResource("2_kwisk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, -6)
+
+[node name="Tile Template61" parent="Map" instance=ExtResource("2_kwisk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, -7)
+
+[node name="Tile Template62" parent="Map" instance=ExtResource("2_kwisk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -6)
+
+[node name="Tile Template63" parent="Map" instance=ExtResource("2_kwisk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -5)
+
+[node name="Tile Template64" parent="Map" instance=ExtResource("2_kwisk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -6)
+
+[node name="Tile Template65" parent="Map" instance=ExtResource("2_kwisk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -5)
+
+[node name="Tile Template66" parent="Map" instance=ExtResource("2_kwisk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -6)
+
+[node name="Tile Template67" parent="Map" instance=ExtResource("2_kwisk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -6)
+
+[node name="Tile Template68" parent="Map" instance=ExtResource("2_kwisk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, -6)
+
+[node name="Tile Template69" parent="Map" instance=ExtResource("2_kwisk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, -7)
+
+[node name="Tile Template70" parent="Map" instance=ExtResource("2_kwisk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, -5)
+
+[node name="Tile Template71" parent="Map" instance=ExtResource("2_kwisk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -5)
+
+[node name="Tile Template72" parent="Map" instance=ExtResource("2_kwisk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -5)
+
 [node name="Path3D" type="Path3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.037474096, 0.52553964, 0)
 curve = SubResource("Curve3D_2sp8g")
@@ -83,7 +243,7 @@ curve = SubResource("Curve3D_2sp8g")
 [node name="SpawnTimer" type="Timer" parent="."]
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.65893894, 0.75219643, 0, -0.75219643, 0.65893894, 0, 3.7255836, 2.1069877)
+transform = Transform3D(1, 0, 0, 0, 0.34737763, 0.93772537, 0, -0.93772537, 0.34737763, 0, 11.273711, -0.8687763)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.6251473, 0.7805068, 0, -0.7805068, 0.6251473, 0.06255412, 5.6675096, 0.8864906)

@@ -1,0 +1,43 @@
+[gd_scene load_steps=6 format=3 uid="uid://c6pxy1rnb8w7n"]
+
+[ext_resource type="Script" uid="uid://bbu6u02bgx7s5" path="res://Scripts/tower.gd" id="1_fij3n"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_5lcwj"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fij3n"]
+albedo_color = Color(4.9093364e-06, 0.77588665, 0.73832947, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5yiti"]
+size = Vector3(1, 0.23638916, 1)
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_5yiti"]
+radius = 5.0
+
+[node name="Tower Template" type="StaticBody3D"]
+script = ExtResource("1_fij3n")
+
+[node name="Tower Mesh" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 2, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_5lcwj")
+surface_material_override/0 = SubResource("StandardMaterial3D_fij3n")
+
+[node name="Aim" type="Marker3D" parent="Tower Mesh"]
+transform = Transform3D(1, 0, 0, 0, 0.5, 0, 0, 0, 1, 0, 0.32589167, 0.51368785)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.13290405, 0)
+shape = SubResource("BoxShape3D_5yiti")
+
+[node name="Enemy Detector" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Enemy Detector"]
+shape = SubResource("SphereShape3D_5yiti")
+
+[node name="BulletContainer" type="Node" parent="."]
+
+[node name="ShotCooldown" type="Timer" parent="."]
+wait_time = 0.5
+
+[connection signal="body_entered" from="Enemy Detector" to="." method="_on_enemy_detector_body_entered"]
+[connection signal="body_exited" from="Enemy Detector" to="." method="_on_enemy_detector_body_exited"]
+[connection signal="timeout" from="ShotCooldown" to="." method="_on_shot_cooldown_timeout"]

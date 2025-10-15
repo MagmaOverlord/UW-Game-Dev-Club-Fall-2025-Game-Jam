@@ -11,10 +11,11 @@ config_version=5
 [application]
 
 config/name="UW Game Dev Club Fall Jam 2025"
-run/main_scene="uid://d045yed3ej1rv"
+run/main_scene="uid://byk2gov8exdbc"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
 
 [global_group]
 
 GameManager="Used to access the game manager for all objects"
+Enemy=""
