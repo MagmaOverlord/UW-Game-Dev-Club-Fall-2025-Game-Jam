@@ -19,5 +19,4 @@ func _physics_process(delta):
 func _on_collision_body_entered(body):
 	if body.name.match(target.name): #need to test
 		body.take_damage(damage)
-		print("hit enemy")
 		queue_free()

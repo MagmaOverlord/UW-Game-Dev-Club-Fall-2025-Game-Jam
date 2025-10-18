@@ -16,11 +16,13 @@ up_vector_enabled = false
 
 [node name="World" type="Node3D"]
 script = ExtResource("1_kwisk")
-tile_start = ExtResource("1_2sp8g")
+map_length = null
+map_height = null
 tile_straight = ExtResource("1_2sp8g")
 tile_corner = ExtResource("3_tbwyo")
 tile_empty = ExtResource("2_kwisk")
-tile_end = ExtResource("1_2sp8g")
+playerHP = null
+gold = null
 
 [node name="Tower Template" parent="." instance=ExtResource("4_jk67j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0058357, 0.5, -1.9757313)
@@ -250,7 +252,7 @@ curve = SubResource("Curve3D_2sp8g")
 [node name="SpawnTimer" type="Timer" parent="."]
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.34737763, 0.93772537, 0, -0.93772537, 0.34737763, 1.430263, 16.476389, 10.52865)
+transform = Transform3D(1, 0, 0, 0, 0.34737763, 0.93772537, 0, -0.93772537, 0.34737763, 0, 18.253424, 5.7316484)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.6251473, 0.7805068, 0, -0.7805068, 0.6251473, 0.06255412, 5.6675096, 0.8864906)

@@ -12,6 +12,5 @@ func _physics_process(delta):
 
 func take_damage(damage : int) -> void:
 	hp -= damage
-	print("hp of " + name + ": " + str(hp))
 	if hp <= 0:
 		queue_free()
