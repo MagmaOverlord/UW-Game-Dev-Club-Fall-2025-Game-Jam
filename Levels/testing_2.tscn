@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://byk2gov8exdbc"]
+[gd_scene load_steps=6 format=3 uid="uid://byk2gov8exdbc"]
 
 [ext_resource type="PackedScene" uid="uid://bdgdno75gln4m" path="res://Objects/Tiles/tile_path_straight.tscn" id="1_2sp8g"]
 [ext_resource type="Script" uid="uid://g212y8a0y1mr" path="res://Levels/world.gd" id="1_kwisk"]
@@ -6,16 +6,13 @@
 [ext_resource type="PackedScene" uid="uid://djwuw537o7ui6" path="res://Objects/Tiles/tile_path_corner.tscn" id="3_tbwyo"]
 [ext_resource type="PackedScene" uid="uid://c6pxy1rnb8w7n" path="res://Objects/Towers/tower_template.tscn" id="4_jk67j"]
 
-[sub_resource type="Curve3D" id="Curve3D_2sp8g"]
-_data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -0.052308425, -0.00033807755, 0.4251981, 0, 0, 0, 0, 0, 0, -0.0070179207, 0.0024052514, -3.0198526, 0, 0, 0, 0, 0, 0, -4.864315, 0.18129584, -2.9772954, 0, 0, 0, 0, 0, 0, -4.968487, 0.22826838, -7.9112387, 0, 0, 0, 0, 0, 0, -1.8957386, 0.22844386, -7.8973455, 0, 0, 0, 0, 0, 0, -1.960988, 0.21933246, -6.9412456, 0, 0, 0, 0, 0, 0, 0.9634115, 0.21845603, -6.8185153, 0, 0, 0, 0, 0, 0, 0.8551266, 0.247154, -9.833259),
-"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0)
-}
-point_count = 8
-up_vector_enabled = false
-
 [node name="World" type="Node3D"]
 script = ExtResource("1_kwisk")
+map_length = 30
+map_height = 20
+min_path_size = 40
+min_loops = 0
+max_loops = 5
 tile_start = ExtResource("1_2sp8g")
 tile_straight = ExtResource("1_2sp8g")
 tile_corner = ExtResource("3_tbwyo")
@@ -244,13 +241,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -5)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -5)
 
 [node name="Path3D" type="Path3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.037474096, 0.52553964, 0)
-curve = SubResource("Curve3D_2sp8g")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 
 [node name="SpawnTimer" type="Timer" parent="."]
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.34737763, 0.93772537, 0, -0.93772537, 0.34737763, 1.430263, 16.476389, 10.52865)
+transform = Transform3D(1, 0, 0, 0, 0.27992946, 0.9600204, 0, -0.9600204, 0.27992946, 17.917519, 14.337151, 17.05902)
+size = 5.274
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.6251473, 0.7805068, 0, -0.7805068, 0.6251473, 0.06255412, 5.6675096, 0.8864906)

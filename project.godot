@@ -15,6 +15,14 @@ run/main_scene="uid://byk2gov8exdbc"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+PathGenInstance="*res://Scripts/path_generator.gd"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/godot_state_charts/plugin.cfg")
+
 [global_group]
 
 GameManager="Used to access the game manager for all objects"

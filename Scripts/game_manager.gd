@@ -3,6 +3,7 @@ extends Node3D
 #map generation
 @export var map_length:int = 16
 @export var map_height:int = 9
+var path : Path3D
 
 #player info
 @export var playerHP: int = 100
@@ -15,6 +16,7 @@ var round: int = 1;
 
 func _ready():
 	var pg = PathGenerator.new(map_length, map_height)
+	path = get_node("Path3D");
 	print_debug(pg.generate_path())
 
 func _process(delta):
