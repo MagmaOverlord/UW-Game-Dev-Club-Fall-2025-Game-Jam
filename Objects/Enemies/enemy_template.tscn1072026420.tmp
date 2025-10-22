@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://81arhxnv3ggn"]
+
+[ext_resource type="Script" uid="uid://cgy4k0khb0vi6" path="res://Scripts/enemy_follow.gd" id="1_4htb5"]
+[ext_resource type="PackedScene" uid="uid://d6f720v0k2jq" path="res://Models/humanoid.blend" id="2_7o15b"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4htb5"]
+size = Vector3(0.40679932, 1.2060547, 1)
+
+[node name="Enemy Path Follow" type="PathFollow3D"]
+
+[node name="Enemy Body" type="CharacterBody3D" parent="." groups=["Enemy"]]
+script = ExtResource("1_4htb5")
+
+[node name="humanoid" parent="Enemy Body" instance=ExtResource("2_7o15b")]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Enemy Body"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.062347412, 0.103027344, 0)
+shape = SubResource("BoxShape3D_4htb5")

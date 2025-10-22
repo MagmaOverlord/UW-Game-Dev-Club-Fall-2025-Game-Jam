@@ -20,11 +20,12 @@ extends Node3D
 var companions = []
 
 #game control
-var is_round_ongoing: bool = false;
+var is_round_ongoing: bool = true;
 var round: int = 1;
 var enemies_to_spawn : int = 5
 var can_spawn : bool = true;
 @onready var basic_enemy : PackedScene = preload("res://Objects/Enemies/enemy_template.tscn")
+@onready var strong_enemy : PackedScene = preload("res://Objects/Enemies/enemy_strong_template.tscn")
 
 ## Assumes the path generator has finished, and adds the remaining tiles to fill in the grid.
 func _ready():
@@ -34,10 +35,15 @@ func _process(delta):
 	game_manager()
 	
 func game_manager() -> void:
-	if (is_round_ongoing and can_spawn and enemies_to_spawn > 0):
+	if (is_round_ongoing and can_spawn and enemies_to_spawn > 1):
 		$SpawnTimer.start()
 		
 		var tempEnemy = basic_enemy.instantiate()
+		$Path3D.add_child(tempEnemy)
+		enemies_to_spawn -= 1
+		can_spawn = false
+	elif (is_round_ongoing and can_spawn and enemies_to_spawn == 1):
+		var tempEnemy = strong_enemy.instantiate()
 		$Path3D.add_child(tempEnemy)
 		enemies_to_spawn -= 1
 		can_spawn = false

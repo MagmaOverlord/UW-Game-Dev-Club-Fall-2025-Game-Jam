@@ -17,6 +17,8 @@ var bullet : PackedScene = preload("res://Objects/bullet.tscn")
 var current_targets : Array = []
 var curr : CharacterBody3D
 
+@onready var companion_model : Node3D = get_node("tower_rifle/humanoid")
+
 func _ready():
 	$ShotCooldown.wait_time = 1.0 / shooting_speed
 	assign_companion(temp_companion_access.instantiate())
@@ -56,7 +58,9 @@ func shoot() -> void:
 	temp_bullet.target = curr
 	temp_bullet.damage = base_damage
 	get_node("BulletContainer").add_child(temp_bullet)
-	temp_bullet.global_position = $"Tower Mesh/Aim".global_position
+	temp_bullet.global_position = $tower_rifle/humanoid/machinegun/Aim.global_position
+	companion_model.look_at(curr.global_position)
+	companion_model.global_rotation_degrees += Vector3(0, 90, 0)
 
 func _on_enemy_detector_body_entered(body):
 	if body.is_in_group("Enemy"):

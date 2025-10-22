@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cyt01kfsd62ce"
+path="res://.godot/imported/companion game theme.mp3-949b185d9b4750afe2fe9d743e9cd077.mp3str"
+
+[deps]
+
+source_file="res://Music/companion game theme.mp3"
+dest_files=["res://.godot/imported/companion game theme.mp3-949b185d9b4750afe2fe9d743e9cd077.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
